@@ -13,6 +13,7 @@ struct FavoritesView: View {
 				.padding(.horizontal, 16)
 			}
 		}
+		.padding(.horizontal, -2)
 		.background(Color.gray.edgesIgnoringSafeArea(.all))
     }
 }
