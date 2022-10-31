@@ -1,4 +1,5 @@
 MARKETING_VERSION=1.0
 CURRENT_PROJECT_VERSION=10
 BASE_URL=https:/$()/api.themoviedb.org/$()3
+IMAGE_URL=https:/$()/image.tmdb.org/t/p/w154
 API_KEY=8c5f14b9da3dba8040dcf7430e0ffabd

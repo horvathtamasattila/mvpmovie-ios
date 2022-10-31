@@ -13,9 +13,7 @@ struct ElementView: View {
 			HStack(spacing: 16) {
 				KFImage(posterPath)
 					.placeholder { ProgressView() }
-//				Rectangle()
-//					.cornerRadius(16)
-//					.frame(width: 95, height: 130)
+					.cornerRadius(8)
 				VStack(alignment: .leading, spacing: 0) {
 					Text(title)
 						.padding(.bottom, 4)
@@ -28,8 +26,9 @@ struct ElementView: View {
 					}
 					.padding(.bottom, 8)
 					Text(description)
-						.lineLimit(4)
+						.lineLimit(7)
 						.foregroundColor(.white)
+					Spacer()
 				}
 			}
 		}

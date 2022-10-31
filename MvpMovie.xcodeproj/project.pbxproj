@@ -38,6 +38,7 @@
 		576DC446A3967B4811C6AD5F /* MediaClientLive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5C82E13159E96A1169398404 /* MediaClientLive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5771FCB4E335A83352A75542 /* HttpClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB9747160D5E44610E359C2 /* HttpClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		59AE40A6A0ECAB7078D73E82 /* Features.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5836CA473BA4B7FC97486970 /* Features.framework */; };
+		5A92C7480D5D53DFB5067F39 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181665E81AF27DC6014D201A /* SearchResult.swift */; };
 		5E056E3A4DCC940416480AFA /* Features.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5836CA473BA4B7FC97486970 /* Features.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6C03FDB03A4B0B8B626FB586 /* HttpClientLive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 307A9638D4D2EBAE6EF58AD5 /* HttpClientLive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		703166C24E48A7C3BC4BE98A /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73635877C6FDFE5031CCCEC /* SearchViewModel.swift */; };
@@ -259,6 +260,7 @@
 		0ECC685A0EDA28BD612D46A4 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		10CCA93A703475CA015A7639 /* MediaClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MediaClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		15237AB822FDCE9EBB529219 /* Production.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Production.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		181665E81AF27DC6014D201A /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		2506268ABC2864D2F7B7185F /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
 		2D7E478ACDD4EE705C948745 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		307A9638D4D2EBAE6EF58AD5 /* HttpClientLive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HttpClientLive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -613,6 +615,7 @@
 			isa = PBXGroup;
 			children = (
 				6AED9DD11EFF38AA7C909531 /* Domain.swift */,
+				181665E81AF27DC6014D201A /* SearchResult.swift */,
 			);
 			path = MediaDomain;
 			sourceTree = "<group>";
@@ -1039,6 +1042,7 @@
 				A75A5D6A0102793FB6B36DB2 /* Domain.swift in Sources */,
 				77BDD6E9FA7D9E2415A08103 /* MediaClient.swift in Sources */,
 				2FE84BA8826F5942F106B98F /* MediaClientMock.swift in Sources */,
+				5A92C7480D5D53DFB5067F39 /* SearchResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

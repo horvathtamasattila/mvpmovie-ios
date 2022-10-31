@@ -42,7 +42,8 @@ class SearchViewModel: ObservableObject {
 				},
 				receiveValue: { results in
 					guard !results.isEmpty else { return }
-					unownedSelf.searchResults = results.toRepresentable()
+					let filteredResults = results.filter { $0.title != "" && $0.overview != "" && $0.poster_path != nil }
+					unownedSelf.searchResults = filteredResults.toRepresentable()
 				}
 			)
 			.store(in: &subscription)
