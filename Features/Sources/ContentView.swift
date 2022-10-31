@@ -4,12 +4,12 @@ public struct ContentView: View {
     public init() {}
     public var body: some View {
 		TabView {
-			FavoritesView()
+			SearchView()
 				.tabItem {
 					Label("Home", systemImage: "heart")
 				}
 				.toolbar(.visible, for: .tabBar)
-				.toolbarBackground(Color.gray, for: .tabBar)
+				.toolbarBackground(Color.primaryBackground, for: .tabBar)
 
 			Text("Search")
 				.tabItem {

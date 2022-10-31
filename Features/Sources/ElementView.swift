@@ -35,6 +35,6 @@ struct ElementView_Previews: PreviewProvider {
 			rating: "9.5",
 			description: "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum"
 		)
-		.background(Color.gray)
+		.background(Color.primaryBackground)
     }
 }
