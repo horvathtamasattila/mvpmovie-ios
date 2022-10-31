@@ -20,7 +20,7 @@ public struct SearchResult: Decodable {
 	}
 
 	public var poster_path: URL? {
-		_poster_path != nil ? URL(string:"\(MediaClient.imageURL)\(_poster_path!)")! : nil
+		_poster_path != nil ? URL(string:"\(MediaClient.imageURL)/w154\(_poster_path!)")! : nil
 	}
 
 	public var vote_average: String {
