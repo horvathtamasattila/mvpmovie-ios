@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		011A9BB5957641287EC37CF6 /* HttpClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB9747160D5E44610E359C2 /* HttpClient.framework */; };
+		027FD5712910266C00600DFA /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027FD5702910266C00600DFA /* SearchView.swift */; };
+		027FD573291026A200600DFA /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027FD572291026A200600DFA /* SearchViewModel.swift */; };
+		027FD5752910275800600DFA /* ElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027FD5742910275800600DFA /* ElementView.swift */; };
 		05412776420DEADCDE2837D9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72E1C72A0357B620D1FA11D /* ContentView.swift */; };
 		05E03688F26E6106FE0B769D /* HttpClientLive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 307A9638D4D2EBAE6EF58AD5 /* HttpClientLive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		08CD68EB1D69D27D9D3C33E9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8BC8999CD4C80FAA4A7B4FE6 /* Alamofire */; };
@@ -242,6 +245,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		027FD5702910266C00600DFA /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		027FD572291026A200600DFA /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		027FD5742910275800600DFA /* ElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementView.swift; sourceTree = "<group>"; };
 		0ECC685A0EDA28BD612D46A4 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		10CCA93A703475CA015A7639 /* MediaClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MediaClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		15237AB822FDCE9EBB529219 /* Production.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Production.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -350,6 +356,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		027FD56F2910265200600DFA /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				027FD5702910266C00600DFA /* SearchView.swift */,
+				027FD572291026A200600DFA /* SearchViewModel.swift */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
 		220EF516953DA249E7C94584 /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -407,7 +422,9 @@
 		70418252B1F0A7BBEC4FB2A5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				027FD56F2910265200600DFA /* SearchView */,
 				C72E1C72A0357B620D1FA11D /* ContentView.swift */,
+				027FD5742910275800600DFA /* ElementView.swift */,
 				9CC7EF7028B35D9472561473 /* Info.plist */,
 				B9C207DB065BFDFDCFFEC22C /* System */,
 			);
@@ -923,8 +940,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				027FD5712910266C00600DFA /* SearchView.swift in Sources */,
+				027FD573291026A200600DFA /* SearchViewModel.swift in Sources */,
 				05412776420DEADCDE2837D9 /* ContentView.swift in Sources */,
 				EAE6D8EA5BA5597833EC5802 /* DI.swift in Sources */,
+				027FD5752910275800600DFA /* ElementView.swift in Sources */,
 				7EC4A49131C845853892A8EE /* FeaturesAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1124,7 +1144,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1351,7 +1371,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
