@@ -27,6 +27,7 @@ configFiles:
   Release: Configs/Release.xcconfig
 include:
     - Clients/HttpClient/HttpClient.yml
+    - Clients/MediaClient/MediaClient.yml
     - Features/Features.yml
 packages:
   Alamofire:
@@ -57,6 +58,7 @@ targets:
         createIntermediateGroups: true
     dependencies:
       - target: HttpClientLive
+      - target: MediaClientLive
       - package: Alamofire
   Production:
     type: application
@@ -68,6 +70,7 @@ targets:
         createIntermediateGroups: true
     dependencies:
       - target: HttpClientLive
+      - target: MediaClientLive
       - package: Alamofire
 targetTemplates:
   MvpMovie:
@@ -81,6 +84,7 @@ targetTemplates:
         PRODUCT_BUNDLE_IDENTIFIER: com.mvpmovie.app
     dependencies:
       - target: HttpClient
+      - target: MediaClient
       - target: Features
       - package: Swinject
       - package: SwinjectAutoregistration

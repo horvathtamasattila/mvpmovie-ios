@@ -1,0 +1,17 @@
+---
+targets:
+  MediaClient:
+    type: framework
+    platform: iOS
+    sources:
+      - path: Interface
+        createIntermediateGroups: true
+  MediaClientLive:
+    type: framework
+    platform: iOS
+    sources:
+      - path: Live
+        createIntermediateGroups: true
+    dependencies: 
+      - target: MediaClient
+      - target: HttpClientLive
