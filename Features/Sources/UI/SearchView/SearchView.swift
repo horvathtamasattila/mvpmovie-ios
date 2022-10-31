@@ -8,14 +8,19 @@ struct SearchView: View {
 				ScrollView {
 					if(!viewModel.searchText.isEmpty) {
 						ForEach(viewModel.searchResults) { result in
-							ElementView(
-								title: result.searchResult.title,
-								rating: result.searchResult.vote_average,
-								description: result.searchResult.overview,
-								posterPath: result.searchResult.poster_path
-							)
-							.padding(.vertical, 24)
-							.padding(.horizontal, 16)
+							NavigationLink(
+								destination: DetailView(
+									media: result.searchResult),
+								label: {
+								ElementView(
+									title: result.searchResult.title,
+									rating: result.searchResult.vote_average,
+									description: result.searchResult.overview,
+									posterPath: result.searchResult.poster_path
+								)
+								.padding(.vertical, 24)
+								.padding(.horizontal, 16)
+							})
 						}
 					} else {
 						Color.primaryBackground.edgesIgnoringSafeArea(.all)

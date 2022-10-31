@@ -18,17 +18,12 @@ struct ElementView: View {
 					Text(title)
 						.padding(.bottom, 4)
 						.foregroundColor(.white)
-					HStack(spacing: 4) {
-						Image(systemName: "star.fill")
-							.foregroundColor(.orange)
-						Text(String(describing: rating))
-							.foregroundColor(.orange)
-					}
+					RatingView(rating: rating)
 					.padding(.bottom, 8)
 					Text(description)
 						.lineLimit(7)
 						.foregroundColor(.white)
-					Spacer()
+					//Spacer()
 				}
 			}
 		}
