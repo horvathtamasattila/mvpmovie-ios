@@ -3,12 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		011A9BB5957641287EC37CF6 /* HttpClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB9747160D5E44610E359C2 /* HttpClient.framework */; };
 		013F4CBE20626C96606BF79A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F11BC2006B0B21C95888826 /* Colors.xcassets */; };
+		027FD57E291037BB00600DFA /* SearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027FD57D291037BB00600DFA /* SearchUseCase.swift */; };
+		027FD58029103CE700600DFA /* SearchResult+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027FD57F29103CE700600DFA /* SearchResult+.swift */; };
 		05412776420DEADCDE2837D9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72E1C72A0357B620D1FA11D /* ContentView.swift */; };
 		05E03688F26E6106FE0B769D /* HttpClientLive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 307A9638D4D2EBAE6EF58AD5 /* HttpClientLive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		08CD68EB1D69D27D9D3C33E9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8BC8999CD4C80FAA4A7B4FE6 /* Alamofire */; };
@@ -249,6 +251,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		027FD57D291037BB00600DFA /* SearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUseCase.swift; sourceTree = "<group>"; };
+		027FD57F29103CE700600DFA /* SearchResult+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchResult+.swift"; sourceTree = "<group>"; };
 		0ECC685A0EDA28BD612D46A4 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		10CCA93A703475CA015A7639 /* MediaClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MediaClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		15237AB822FDCE9EBB529219 /* Production.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Production.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -362,10 +366,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		027FD57A2910378400600DFA /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				027FD57B2910379100600DFA /* Shared */,
+				806F76FEFC532EBF81A29F5A /* SearchView */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		027FD57B2910379100600DFA /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				1B8327ADE584CDA54CEF696D /* ElementView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		027FD57C291037A300600DFA /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				027FD57D291037BB00600DFA /* SearchUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
 		03B09E38BCD7E1AE9E6F0F85 /* Util */ = {
 			isa = PBXGroup;
 			children = (
 				530A37C629F5B090A2434DE0 /* Color+.swift */,
+				027FD57F29103CE700600DFA /* SearchResult+.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -427,10 +457,10 @@
 		70418252B1F0A7BBEC4FB2A5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				027FD57C291037A300600DFA /* UseCases */,
+				027FD57A2910378400600DFA /* UI */,
 				C72E1C72A0357B620D1FA11D /* ContentView.swift */,
-				1B8327ADE584CDA54CEF696D /* ElementView.swift */,
 				9CC7EF7028B35D9472561473 /* Info.plist */,
-				806F76FEFC532EBF81A29F5A /* SearchView */,
 				B9C207DB065BFDFDCFFEC22C /* System */,
 			);
 			path = Sources;
@@ -964,6 +994,8 @@
 				EAE6D8EA5BA5597833EC5802 /* DI.swift in Sources */,
 				719A254FCBBFDF8B7551AB63 /* ElementView.swift in Sources */,
 				7EC4A49131C845853892A8EE /* FeaturesAssembly.swift in Sources */,
+				027FD57E291037BB00600DFA /* SearchUseCase.swift in Sources */,
+				027FD58029103CE700600DFA /* SearchResult+.swift in Sources */,
 				5F70087DFB145782C19ABE38 /* SearchView.swift in Sources */,
 				4DBE60C49D5A56FF1529C541 /* SearchViewModel.swift in Sources */,
 			);

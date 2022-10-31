@@ -20,4 +20,7 @@ public struct SearchResults: Decodable {
 
 public struct SearchResult: Decodable {
 	public let title: String?
+	public let overview: String?
+	public let poster_path: String?
+	public let vote_average: Double?
 }
