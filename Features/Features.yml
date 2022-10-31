@@ -7,5 +7,6 @@ targets:
       - path: Sources
         createIntermediateGroups: true
     dependencies:
+      - package: Kingfisher
       - package: Swinject
       - package: SwinjectAutoregistration
