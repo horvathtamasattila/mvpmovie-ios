@@ -16,6 +16,7 @@ public struct ContentView: View {
 					Label("Account", systemImage: "magnifyingglass")
 				}
 		}
+		.colorScheme(.dark)
     }
 }
 
