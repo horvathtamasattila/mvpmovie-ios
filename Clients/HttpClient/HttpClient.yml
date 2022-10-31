@@ -1,0 +1,17 @@
+---
+targets:
+  HttpClient:
+    type: framework
+    platform: iOS
+    sources:
+      - path: Interface
+        createIntermediateGroups: true
+  HttpClientLive:
+    type: framework
+    platform: iOS
+    sources:
+      - path: Live
+        createIntermediateGroups: true
+    dependencies: 
+      - target: HttpClient
+      - package: Alamofire
