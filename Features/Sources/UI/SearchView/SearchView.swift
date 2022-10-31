@@ -11,7 +11,8 @@ struct SearchView: View {
 							ElementView(
 								title: result.searchResult.title,
 								rating: result.searchResult.vote_average,
-								description: result.searchResult.overview
+								description: result.searchResult.overview,
+								posterPath: result.searchResult.poster_path
 							)
 							.padding(.vertical, 24)
 							.padding(.horizontal, 16)
