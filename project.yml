@@ -51,6 +51,7 @@ targets:
     sources:
       - path: MvpMovie/Configurations/Mock
         createIntermediateGroups: true
+      - path: Mocks
   Development:
     type: application
     platform: iOS
