@@ -14,4 +14,8 @@ class MediaUseCase {
 	func saveMedia(media: SearchResult) {
 		mediaRepository.saveMedia(media: media)
 	}
+
+	func getSavedMedia() -> [SearchResult] {
+		mediaRepository.getSavedMedia()
+	}
 }

@@ -11,4 +11,8 @@ final class MediaRepository: ObservableObject {
 	func saveMedia(media: SearchResult) {
 		savedMedia.append(media)
 	}
+
+	func getSavedMedia() -> [SearchResult] {
+		savedMedia
+	}
 }
