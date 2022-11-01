@@ -12,8 +12,14 @@ class MediaUseCase {
 	}
 
 	func saveMedia(media: SearchResult) {
-		if !mediaRepository.savedMedia.contains(media) {
+		if !mediaRepository.getSavedMedia().contains(media) {
 			mediaRepository.saveMedia(media: media)
+		}
+	}
+
+	func hideMedia(media: SearchResult) {
+		if !mediaRepository.getHiddenMedia().contains(media) {
+			mediaRepository.hideMedia(media: media)
 		}
 	}
 

@@ -2,12 +2,14 @@ import Combine
 import MediaClient
 
 final class MediaRepository: ObservableObject {
-	@Published private(set) var savedMedia: [SearchResult]
+	@Published private var savedMedia: [SearchResult]
+	@Published private var hiddenMedia: [SearchResult]
 
 	private let databaseWorker: MediaDatabaseWorker
 	private var subscription: Set<AnyCancellable> = []
 	init(databaseWorker: MediaDatabaseWorker) {
 		self.savedMedia = []
+		self.hiddenMedia = []
 		self.databaseWorker = databaseWorker
 
 		unowned let unownedSelf = self
@@ -19,8 +21,9 @@ final class MediaRepository: ObservableObject {
 					default: break
 					}
 				},
-				receiveValue: { media in
-					unownedSelf.savedMedia = media
+				receiveValue: { savedMedia, hiddenMedia in
+					unownedSelf.savedMedia = savedMedia
+					unownedSelf.hiddenMedia = hiddenMedia
 				}
 			)
 			.store(in: &subscription)
@@ -31,7 +34,16 @@ final class MediaRepository: ObservableObject {
 		databaseWorker.saveMediaToDatabase(media: media)
 	}
 
+	func hideMedia(media: SearchResult) {
+		hiddenMedia.append(media)
+		databaseWorker.saveHiddenMediaToDatabase(media: media)
+	}
+
 	func getSavedMedia() -> [SearchResult] {
 		savedMedia
+	}
+
+	func getHiddenMedia() -> [SearchResult] {
+		hiddenMedia
 	}
 }
