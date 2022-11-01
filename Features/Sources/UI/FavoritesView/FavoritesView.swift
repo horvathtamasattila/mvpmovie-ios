@@ -17,7 +17,10 @@ struct FavoritesView: View {
                         .padding(.horizontal, 16)
                     }
                 } else {
-                    Color.primaryBackground.edgesIgnoringSafeArea(.all)
+					ZStack {
+						Color.primaryBackground.edgesIgnoringSafeArea(.all)
+						Image("no_movie_yet")
+					}
                 }
             }
             .background(Color.primaryBackground.edgesIgnoringSafeArea(.all))
