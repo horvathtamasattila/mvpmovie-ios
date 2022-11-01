@@ -1,0 +1,14 @@
+# format options
+--allman false
+--commas "inline"
+--disable blankLinesAtStartOfScope, enumNamespaces, redundantSelf, extensionAccessControl
+--enable andOperator, consecutiveBlankLines, strongOutlets, isEmpty, redundantBreak, strongifiedSelf, todos, wrapMultilineStatementBraces, redundantReturn
+--elseposition same-line
+--guardelse same-line
+--header "strip"
+--indent 4
+--semicolons never
+--swiftversion 5
+
+# file options
+--exclude vendor

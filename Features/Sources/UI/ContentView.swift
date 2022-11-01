@@ -1,31 +1,33 @@
 import SwiftUI
 
 public struct ContentView: View {
-	@StateObject var viewModel = inject(ContentViewModel.self)
+    @StateObject var viewModel = inject(ContentViewModel.self)
     public init() {}
     public var body: some View {
-		ZStack {
-			TabView {
-				FavoritesView()
-					.tabItem {
-						Label("Favorites", systemImage: "heart")
-					}
-					.toolbar(.visible, for: .tabBar)
-					.toolbarBackground(Color.primaryBackground, for: .tabBar)
+        ZStack {
+            TabView {
+                FavoritesView()
+                    .tabItem {
+                        Label("tab_bar_favorites".localized, systemImage: "heart")
+                    }
+                    .toolbar(.visible, for: .tabBar)
+                    .toolbarBackground(Color.primaryBackground, for: .tabBar)
 
-				SearchView()
-					.tabItem {
-						Label("Search", systemImage: "magnifyingglass")
-					}
-			}
-			.colorScheme(.dark)
-			VStack {
-				Spacer.weighted(4)
-				ConnectivityIssueView()
-				Spacer()
-			}
-			.visible(viewModel.isShowingNetworkAlert)
-		}
+                SearchView()
+                    .tabItem {
+                        Label("tab_bar_search".localized, systemImage: "magnifyingglass")
+                    }
+            }
+            .colorScheme(.dark)
+            .zIndex(0)
+            VStack {
+                Spacer.weighted(4)
+                ConnectivityIssueView()
+                Spacer()
+            }
+            .visible(viewModel.isShowingNetworkAlert)
+            .zIndex(1)
+        }
     }
 }
 
