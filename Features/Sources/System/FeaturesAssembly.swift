@@ -12,5 +12,7 @@ public class FeaturesAssembly: Assembly {
 		container.autoregister(MediaUseCase.self, initializer: MediaUseCase.init)
 
 		container.autoregister(MediaRepository.self, initializer: MediaRepository.init).inObjectScope(.container)
+
+		container.autoregister(MediaDatabaseWorker.self, initializer: MediaDatabaseWorker.init)
 	}
 }
