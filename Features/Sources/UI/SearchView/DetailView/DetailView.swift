@@ -65,14 +65,7 @@ struct DetailView: View {
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
 		DetailView(
-			media: SearchResult(
-				_title: "Test",
-				_name: "Test",
-				_overview: "Test",
-				_poster_path: "/gh4cZbhZxyTbgxQPxD0dOudNPTn.jpg",
-				_backdrop_path: "/14QbnygCuTO0vl7CAFmPf1fgZfV.jpg",
-				_vote_average: 5
-			)
+			media: .mock
 		)
     }
 }

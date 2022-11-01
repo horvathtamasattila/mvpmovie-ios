@@ -29,6 +29,7 @@ include:
     - Clients/HttpClient/HttpClient.yml
     - Clients/MediaClient/MediaClient.yml
     - Features/Features.yml
+    - UnitTests/UnitTests.yml
 packages:
   Alamofire:
     url: https://github.com/Alamofire/Alamofire.git
@@ -121,6 +122,8 @@ schemes:
       config: Debug
     test:
       config: Debug
+      targets:
+        - UnitTests
   Production:
     build:
       targets:

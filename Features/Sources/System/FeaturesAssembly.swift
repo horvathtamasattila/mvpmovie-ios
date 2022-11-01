@@ -10,7 +10,7 @@ public class FeaturesAssembly: Assembly {
 		container.autoregister(FavoritesViewModel.self, initializer: FavoritesViewModel.init)
 
 		container.autoregister(SearchUseCase.self, initializer: SearchUseCase.init)
-		container.autoregister(MediaUseCase.self, initializer: MediaUseCase.init)
+		container.autoregister(MediaUseCase.self, initializer: MediaUseCaseLive.init)
 
 		container.autoregister(MediaRepository.self, initializer: MediaRepository.init).inObjectScope(.container)
 

@@ -1,0 +1,10 @@
+---
+targets:
+  UnitTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: Sources
+        createIntermediateGroups: true
+    dependencies:
+      - target: Features
