@@ -7,3 +7,8 @@
 "detail_hide_button" = "Hide";
 "detail_hidden_button" = "Hidden!";
 "connectivity_issue_label" = "Connection Lost!";
+"favorites_no_movie_yet_title" = "There are no movies yet!";
+"favorites_no_movie_yet_body" = "Find your movie on the Search tab";
+"search_not_found_title" = "We are sorry, we cannot find the movie";
+"search_not_found_body" = "Try to look for an other one";
+

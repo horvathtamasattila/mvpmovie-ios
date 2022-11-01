@@ -6,7 +6,7 @@ struct SearchView: View {
         VStack(spacing: 0) {
             NavigationStack {
                 ScrollView {
-                    if !viewModel.searchText.isEmpty {
+                    if !viewModel.searchResults.isEmpty {
                         ForEach(viewModel.searchResults) { result in
                             NavigationLink(
                                 destination: DetailView(
@@ -24,7 +24,22 @@ struct SearchView: View {
                             )
                         }
                     } else {
-                        Color.primaryBackground.edgesIgnoringSafeArea(.all)
+                        ZStack {
+                            Color.primaryBackground.edgesIgnoringSafeArea(.all)
+                            VStack(spacing: 0) {
+                                Image("search_not_found")
+                                    .padding(.top, UIScreen.main.bounds.height / 4)
+                                Text("search_not_found_title".localized)
+                                    .font(.title)
+									.multilineTextAlignment(.center)
+                                    .padding(.top, 16)
+									.padding(.horizontal, 56)
+                                Text("search_not_found_body".localized)
+                                    .font(.body)
+                                    .padding(.top, 24)
+                            }
+                            .visible(viewModel.isShowingNotFound)
+                        }
                     }
                 }
                 .background(Color.primaryBackground.edgesIgnoringSafeArea(.all))
@@ -32,6 +47,7 @@ struct SearchView: View {
                 .navigationTitle("search_title".localized)
                 .toolbarColorScheme(.dark, for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
+                .colorScheme(.dark)
             }
         }
     }

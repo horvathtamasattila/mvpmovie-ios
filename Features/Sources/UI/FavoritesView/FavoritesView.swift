@@ -17,16 +17,26 @@ struct FavoritesView: View {
                         .padding(.horizontal, 16)
                     }
                 } else {
-					ZStack {
-						Color.primaryBackground.edgesIgnoringSafeArea(.all)
-						Image("no_movie_yet")
-					}
+                    ZStack {
+                        Color.primaryBackground.edgesIgnoringSafeArea(.all)
+                        VStack(spacing: 0) {
+                            Image("no_movie_yet")
+                                .padding(.top, UIScreen.main.bounds.height / 4)
+                            Text("favorites_no_movie_yet_title")
+                                .font(.title)
+                                .padding(.top, 16)
+                            Text("favorites_no_movie_yet_body".localized)
+                                .font(.body)
+                                .padding(.top, 8)
+                        }
+                    }
                 }
             }
             .background(Color.primaryBackground.edgesIgnoringSafeArea(.all))
             .navigationTitle("favorites_title".localized)
             .toolbarColorScheme(.dark, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
+            .colorScheme(.dark)
         }
         .background(Color.primaryBackground.edgesIgnoringSafeArea(.all))
         .onAppear {

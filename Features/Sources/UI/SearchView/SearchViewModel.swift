@@ -5,6 +5,7 @@ import MediaClient
 class SearchViewModel: ObservableObject {
     @Published var searchText = ""
     @Published var searchResults: [SearchResultRepresentable] = []
+    @Published var isShowingNotFound = false
 
     private var searchUseCase: SearchUseCase
     private var subscription: Set<AnyCancellable> = []
@@ -17,6 +18,7 @@ class SearchViewModel: ObservableObject {
             .removeDuplicates()
             .map { text -> String? in
                 if text.count < 1 {
+                    unownedSelf.isShowingNotFound = false
                     unownedSelf.searchResults.removeAll()
                     return nil
                 }
@@ -41,7 +43,11 @@ class SearchViewModel: ObservableObject {
                     }
                 },
                 receiveValue: { results in
-                    guard !results.isEmpty else { return }
+                    guard !results.isEmpty else {
+                        unownedSelf.isShowingNotFound = true
+                        unownedSelf.searchResults.removeAll()
+                        return
+                    }
                     let filteredResults = results.filter { $0.title != "" && $0.overview != "" && $0.poster_path != nil }
                     unownedSelf.searchResults = filteredResults.toRepresentable()
                 }
