@@ -2,7 +2,13 @@ import Combine
 import Foundation
 import MediaClient
 
-class MediaUseCase {
+protocol MediaUseCase {
+	func saveMedia(media: SearchResult)
+	func hideMedia(media: SearchResult)
+	func getSavedMedia() -> [SearchResult]
+}
+
+class MediaUseCaseLive: MediaUseCase {
 	private let mediaClient: MediaClient
 	private let mediaRepository: MediaRepository
 
