@@ -24,7 +24,6 @@ final class MediaDatabaseWorker {
 
 	func saveMediaToDatabase(media: SearchResult) {
 		let backgroundContext = CoreDataStack.shared.backgroundContext
-		let fetchRequest = CDMedia.fetchRequest()
 		backgroundContext.perform {
 			do {
 				_ = media.toCDMedia(context: backgroundContext)
