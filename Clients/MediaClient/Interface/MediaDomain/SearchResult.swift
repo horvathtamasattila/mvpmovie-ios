@@ -5,12 +5,12 @@ public struct SearchResults: Decodable {
 }
 
 public struct SearchResult: Decodable, Hashable {
-	private let _title: String?
-	private let _name: String?
-	private let _overview: String?
-	private let _poster_path: String?
-	private let _backdrop_path: String?
-	private let _vote_average: Double?
+	public let _title: String?
+	public let _name: String?
+	public let _overview: String?
+	public let _poster_path: String?
+	public let _backdrop_path: String?
+	public let _vote_average: Double?
 
 	public init(_title: String?, _name: String?, _overview: String?, _poster_path: String?, _backdrop_path: String?, _vote_average: Double?) {
 		self._title = _title

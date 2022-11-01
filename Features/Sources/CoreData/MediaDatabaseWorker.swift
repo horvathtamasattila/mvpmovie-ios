@@ -21,4 +21,19 @@ final class MediaDatabaseWorker {
 		}
 		.eraseToAnyPublisher()
 	}
+
+	func saveMediaToDatabase(media: SearchResult) {
+		let backgroundContext = CoreDataStack.shared.backgroundContext
+		let fetchRequest = CDMedia.fetchRequest()
+		backgroundContext.perform {
+			do {
+				_ = media.toCDMedia(context: backgroundContext)
+				if backgroundContext.hasChanges {
+					try backgroundContext.save()
+				}
+			} catch {
+				print("Core Data Error")
+			}
+		}
+	}
 }
