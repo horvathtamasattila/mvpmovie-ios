@@ -4,16 +4,16 @@ public struct ContentView: View {
     public init() {}
     public var body: some View {
 		TabView {
-			SearchView()
+			FavoritesView()
 				.tabItem {
-					Label("Home", systemImage: "heart")
+					Label("Favorites", systemImage: "heart")
 				}
 				.toolbar(.visible, for: .tabBar)
 				.toolbarBackground(Color.primaryBackground, for: .tabBar)
 
-			Text("Search")
+			SearchView()
 				.tabItem {
-					Label("Account", systemImage: "magnifyingglass")
+					Label("Search", systemImage: "magnifyingglass")
 				}
 		}
 		.colorScheme(.dark)

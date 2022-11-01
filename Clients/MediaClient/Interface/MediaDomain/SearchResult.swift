@@ -4,7 +4,7 @@ public struct SearchResults: Decodable {
 	public let results: [SearchResult]
 }
 
-public struct SearchResult: Decodable {
+public struct SearchResult: Decodable, Hashable {
 	private let _title: String?
 	private let _name: String?
 	private let _overview: String?
