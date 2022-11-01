@@ -36,12 +36,18 @@ struct DetailView: View {
 						.padding(.bottom, 8)
 					HStack(spacing: 16) {
 						HStack(spacing: 4) {
-							Image(systemName: "bookmark")
-							Text("Save")
+							Image(systemName: viewModel.isSaved ? "bookmark.fill" : "bookmark")
+							Text(viewModel.isSaved ? "Saved!" : "Save")
+						}
+						.onTapGesture {
+							viewModel.saveTapped(media: media)
 						}
 						HStack(spacing: 4) {
-							Image(systemName: "eye.slash")
-							Text("Hide")
+							Image(systemName: viewModel.isHidden ? "eye.slash.fill" : "eye.slash")
+							Text(viewModel.isHidden ? "Hidden!" : "Hide")
+						}
+						.onTapGesture {
+							viewModel.hideTapped(media: media)
 						}
 					}
 					.padding(.horizontal, 16)

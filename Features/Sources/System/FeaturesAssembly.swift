@@ -8,5 +8,8 @@ public class FeaturesAssembly: Assembly {
 		container.autoregister(DetailViewModel.self, initializer: DetailViewModel.init)
 
 		container.autoregister(SearchUseCase.self, initializer: SearchUseCase.init)
+		container.autoregister(MediaUseCase.self, initializer: MediaUseCase.init)
+
+		container.autoregister(MediaRepository.self, initializer: MediaRepository.init)
 	}
 }
