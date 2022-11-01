@@ -21,6 +21,7 @@ final class DetailViewModel: ObservableObject {
 
 	func hideTapped(media: SearchResult) {
 		if !isHidden {
+			mediaUseCase.hideMedia(media: media)
 			isHidden.toggle()
 		}
 	}

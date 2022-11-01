@@ -9,6 +9,7 @@ public class CDMedia: NSManagedObject {
 	@NSManaged public var posterPath: String?
 	@NSManaged public var title: String?
 	@NSManaged public var voteAverage: Double
+	@NSManaged public var isHidden: Bool
 
 	@nonobjc public class func fetchRequest() -> NSFetchRequest<CDMedia> {
 		return NSFetchRequest<CDMedia>(entityName: "CDMedia")
@@ -27,7 +28,7 @@ public class CDMedia: NSManagedObject {
 }
 
 extension SearchResult {
-	func toCDMedia(context: NSManagedObjectContext) -> CDMedia {
+	func toCDMedia(context: NSManagedObjectContext, isHidden: Bool) -> CDMedia {
 		let CDMedia = CDMedia(context: context)
 		CDMedia.backdropPath = self._backdrop_path
 		CDMedia.name = self._name
@@ -35,6 +36,7 @@ extension SearchResult {
 		CDMedia.posterPath = self._poster_path
 		CDMedia.title = self._title
 		CDMedia.voteAverage = self._vote_average ?? 0
+		CDMedia.isHidden = isHidden
 		return CDMedia
 	}
 }
