@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -1043,7 +1043,7 @@
 			packageReferences = (
 				B0226A8FD29BAA1E3349CB01 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				19852ACFA653E15FDFA0317E /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				99EA20A4582F007B49DEC921 /* XCRemoteSwiftPackageReference "Reachability.swift" */,
+				99EA20A4582F007B49DEC921 /* XCRemoteSwiftPackageReference "Reachability" */,
 				000623F817241F11BD8A5844 /* XCRemoteSwiftPackageReference "Swinject" */,
 				7F302F6D63C20A215BD4690D /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */,
 			);
@@ -1100,6 +1100,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		68A811C9AC161ED946C0F038 /* CodeFormatting */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -1118,6 +1119,7 @@
 		};
 		ADDE8BB5F06FA2E0723D8569 /* CodeFormatting */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -1136,6 +1138,7 @@
 		};
 		E6B2D6B33FA3E25C2F8C4D04 /* CodeFormatting */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -1150,7 +1153,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftFormat >/dev/null; then\n\tgit diff --diff-filter=AM --name-only | grep -e '\\(.*\\).swift$' | while read line; do\n\t\tswiftformat \"${line}\"\n\t\techo \"SwiftFormat: ${line}\"\n\tdone\n  \n\tgit status --porcelain| grep -e '\\(.*\\).swift$' |awk '{if($1==\"M\" || $1==\"A\" || $1==\"AM\") {print $2}}' | while read line; do\n\t\tswiftformat \"${line}\"\n\t\techo \"SwiftFormat: ${line}\"\n\tdone\n\nelse\n\techo \"warning: SwiftFormat not installed\"\nfi\n\nif which swiftlint >/dev/null; then\n\tswiftlint;\nelse\n\techo \"warning: SwiftLint not installed\"\nfi";
+			shellScript = "if which swiftFormat >/dev/null; then\n\tgit diff --diff-filter=AM --name-only | grep -e '\\(.*\\).swift$' | while read line; do\n\t\tswiftformat \"${line}\"\n\t\techo \"SwiftFormat: ${line}\"\n\tdone\n  \n\tgit status --porcelain| grep -e '\\(.*\\).swift$' |awk '{if($1==\"M\" || $1==\"A\" || $1==\"AM\") {print $2}}' | while read line; do\n\t\tswiftformat \"${line}\"\n\t\techo \"SwiftFormat: ${line}\"\n\tdone\n\nelse\n\techo \"warning: SwiftFormat not installed\"\nfi\n\nif which swiftlint >/dev/null; then\n\tswiftlint;\nelse\n\techo \"warning: SwiftLint not installed\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1951,7 +1954,7 @@
 				version = 2.8.1;
 			};
 		};
-		99EA20A4582F007B49DEC921 /* XCRemoteSwiftPackageReference "Reachability.swift" */ = {
+		99EA20A4582F007B49DEC921 /* XCRemoteSwiftPackageReference "Reachability" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
 			requirement = {
@@ -1977,7 +1980,7 @@
 		};
 		089C77B449CA9C45E79D8187 /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 99EA20A4582F007B49DEC921 /* XCRemoteSwiftPackageReference "Reachability.swift" */;
+			package = 99EA20A4582F007B49DEC921 /* XCRemoteSwiftPackageReference "Reachability" */;
 			productName = Reachability;
 		};
 		0DF5C4A342ABE9DC7FAB73F1 /* SwinjectAutoregistration */ = {
@@ -2032,7 +2035,7 @@
 		};
 		7C68FFD0B7977A1F2D37509E /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 99EA20A4582F007B49DEC921 /* XCRemoteSwiftPackageReference "Reachability.swift" */;
+			package = 99EA20A4582F007B49DEC921 /* XCRemoteSwiftPackageReference "Reachability" */;
 			productName = Reachability;
 		};
 		8BC8999CD4C80FAA4A7B4FE6 /* Alamofire */ = {
@@ -2042,7 +2045,7 @@
 		};
 		8EB20664B23E101BF7F3C851 /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 99EA20A4582F007B49DEC921 /* XCRemoteSwiftPackageReference "Reachability.swift" */;
+			package = 99EA20A4582F007B49DEC921 /* XCRemoteSwiftPackageReference "Reachability" */;
 			productName = Reachability;
 		};
 		9730A5117AD7322E0EBA9666 /* Kingfisher */ = {
@@ -2057,7 +2060,7 @@
 		};
 		ABE9FE450D94C5C6F61434D5 /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 99EA20A4582F007B49DEC921 /* XCRemoteSwiftPackageReference "Reachability.swift" */;
+			package = 99EA20A4582F007B49DEC921 /* XCRemoteSwiftPackageReference "Reachability" */;
 			productName = Reachability;
 		};
 		C13B4ACA990D100F617AC8EF /* Swinject */ = {
@@ -2082,7 +2085,7 @@
 		};
 		DBE75C954B19EC03F7EADDF7 /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 99EA20A4582F007B49DEC921 /* XCRemoteSwiftPackageReference "Reachability.swift" */;
+			package = 99EA20A4582F007B49DEC921 /* XCRemoteSwiftPackageReference "Reachability" */;
 			productName = Reachability;
 		};
 		E5CA4481E970C6564EA8FD26 /* SwinjectAutoregistration */ = {

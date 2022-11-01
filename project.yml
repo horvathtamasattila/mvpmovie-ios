@@ -101,6 +101,7 @@ targetTemplates:
     prebuildScripts:
       - name: CodeFormatting
         path: "scripts/pre_build_code_formatting.sh"
+        basedOnDependencyAnalysis: false
 schemes:
   Mock:
     build:
