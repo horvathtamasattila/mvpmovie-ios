@@ -10,3 +10,4 @@ targets:
       - package: Kingfisher
       - package: Swinject
       - package: SwinjectAutoregistration
+      - package: Reachability

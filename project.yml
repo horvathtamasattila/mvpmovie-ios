@@ -36,6 +36,9 @@ packages:
   Kingfisher:
     url: https://github.com/onevcat/Kingfisher.git
     version: 7.3.2
+  Reachability:
+    url: https://github.com/ashleymills/Reachability.swift
+    version: 5.1.0
   Swinject:
     url: https://github.com/Swinject/Swinject.git
     version: 2.8.2
@@ -93,6 +96,7 @@ targetTemplates:
       - package: Kingfisher
       - package: Swinject
       - package: SwinjectAutoregistration
+      - package: Reachability
     prebuildScripts:
       - name: CodeFormatting
         path: "scripts/pre_build_code_formatting.sh"
