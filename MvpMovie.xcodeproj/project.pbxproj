@@ -17,6 +17,10 @@
 		027FD595291101C000600DFA /* MediaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027FD594291101C000600DFA /* MediaRepository.swift */; };
 		027FD5982911078A00600DFA /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027FD5972911078A00600DFA /* FavoritesViewModel.swift */; };
 		027FD59A2911079500600DFA /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027FD5992911079500600DFA /* FavoritesView.swift */; };
+		027FD59D29110FB600600DFA /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027FD59C29110FB600600DFA /* CoreDataStack.swift */; };
+		027FD5A02911100000600DFA /* MediaDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 027FD59E2911100000600DFA /* MediaDataModel.xcdatamodeld */; };
+		027FD5A22911117200600DFA /* CDMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027FD5A12911117200600DFA /* CDMedia.swift */; };
+		027FD5A42911138300600DFA /* MediaDatabaseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027FD5A32911138300600DFA /* MediaDatabaseWorker.swift */; };
 		05412776420DEADCDE2837D9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72E1C72A0357B620D1FA11D /* ContentView.swift */; };
 		05E03688F26E6106FE0B769D /* HttpClientLive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 307A9638D4D2EBAE6EF58AD5 /* HttpClientLive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		08CD68EB1D69D27D9D3C33E9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8BC8999CD4C80FAA4A7B4FE6 /* Alamofire */; };
@@ -273,6 +277,10 @@
 		027FD594291101C000600DFA /* MediaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaRepository.swift; sourceTree = "<group>"; };
 		027FD5972911078A00600DFA /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		027FD5992911079500600DFA /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		027FD59C29110FB600600DFA /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		027FD59F2911100000600DFA /* MediaDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MediaDataModel.xcdatamodel; sourceTree = "<group>"; };
+		027FD5A12911117200600DFA /* CDMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDMedia.swift; sourceTree = "<group>"; };
+		027FD5A32911138300600DFA /* MediaDatabaseWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDatabaseWorker.swift; sourceTree = "<group>"; };
 		0551084794134B93E2AD28DC /* SearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUseCase.swift; sourceTree = "<group>"; };
 		0ECC685A0EDA28BD612D46A4 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		10CCA93A703475CA015A7639 /* MediaClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MediaClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -420,6 +428,16 @@
 			path = FavoritesView;
 			sourceTree = "<group>";
 		};
+		027FD59B29110F9F00600DFA /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				027FD59C29110FB600600DFA /* CoreDataStack.swift */,
+				027FD5A12911117200600DFA /* CDMedia.swift */,
+				027FD5A32911138300600DFA /* MediaDatabaseWorker.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		03BE391B71752E8EA98F4DE8 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,6 +533,7 @@
 		70418252B1F0A7BBEC4FB2A5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				027FD59B29110F9F00600DFA /* CoreData */,
 				027FD593291101B000600DFA /* Repositories */,
 				C72E1C72A0357B620D1FA11D /* ContentView.swift */,
 				9CC7EF7028B35D9472561473 /* Info.plist */,
@@ -542,6 +561,7 @@
 				D357F15159B55047E483DCBF /* Assets.xcassets */,
 				8F11BC2006B0B21C95888826 /* Colors.xcassets */,
 				C3358C15FE9124EBF77B2B90 /* Info.plist */,
+				027FD59E2911100000600DFA /* MediaDataModel.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1065,9 +1085,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				027FD5A42911138300600DFA /* MediaDatabaseWorker.swift in Sources */,
 				9C0EA21D77F4EA2E0D9D0846 /* Color+.swift in Sources */,
 				05412776420DEADCDE2837D9 /* ContentView.swift in Sources */,
 				027FD5982911078A00600DFA /* FavoritesViewModel.swift in Sources */,
+				027FD5A22911117200600DFA /* CDMedia.swift in Sources */,
+				027FD59D29110FB600600DFA /* CoreDataStack.swift in Sources */,
 				EAE6D8EA5BA5597833EC5802 /* DI.swift in Sources */,
 				027FD588291054F200600DFA /* DetailView.swift in Sources */,
 				027FD592291064E200600DFA /* View+.swift in Sources */,
@@ -1082,6 +1105,7 @@
 				027FD58A2910550100600DFA /* DetailViewModel.swift in Sources */,
 				027FD58C2910577900600DFA /* MediaUseCase.swift in Sources */,
 				703166C24E48A7C3BC4BE98A /* SearchViewModel.swift in Sources */,
+				027FD5A02911100000600DFA /* MediaDataModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1853,6 +1877,19 @@
 			productName = SwinjectAutoregistration;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		027FD59E2911100000600DFA /* MediaDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				027FD59F2911100000600DFA /* MediaDataModel.xcdatamodel */,
+			);
+			currentVersion = 027FD59F2911100000600DFA /* MediaDataModel.xcdatamodel */;
+			path = MediaDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3363C611887AB5BF4F8FD366 /* Project object */;
 }
